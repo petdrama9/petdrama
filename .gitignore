@@ -1,0 +1,20 @@
+# Local env and secrets
+.env
+*.env
+client_secret_*.json
+space_autopilot/credentials/
+
+# Caches
+__pycache__/
+*.pyc
+
+# Logs
+space_autopilot/logs/
+
+# Outputs & Thumbnails
+space_autopilot/outputs/
+space_autopilot/thumbnails/
+
+# OS files
+.DS_Store
+Thumbs.db

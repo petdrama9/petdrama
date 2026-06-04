@@ -1,0 +1,295 @@
+2026-06-04 20:16:31 | INFO | pipeline | ==================================================
+2026-06-04 20:16:31 | INFO | pipeline | SPACE AUTOPILOT PIPELINE STARTED
+2026-06-04 20:16:31 | INFO | pipeline | ==================================================
+2026-06-04 20:16:31 | INFO | pipeline | Checking MoneyPrinterTurbo at http://localhost:8080...
+2026-06-04 20:16:31 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:16:31 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:16:31 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:16:31 | ERROR | pipeline | MoneyPrinterTurbo is NOT running
+2026-06-04 20:16:31 | ERROR | pipeline | Start it: cd MoneyPrinterTurbo && python main.py
+2026-06-04 20:26:56 | INFO | pipeline | ==================================================
+2026-06-04 20:26:56 | INFO | pipeline | SPACE AUTOPILOT PIPELINE STARTED
+2026-06-04 20:26:56 | INFO | pipeline | ==================================================
+2026-06-04 20:26:56 | INFO | pipeline | Checking MoneyPrinterTurbo at http://localhost:8080...
+2026-06-04 20:26:56 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:26:56 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/health HTTP/1.1" 404 22
+2026-06-04 20:26:56 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:26:56 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /docs HTTP/1.1" 200 1016
+2026-06-04 20:26:56 | INFO | video_creator | MoneyPrinterTurbo reachable at http://localhost:8080/docs
+2026-06-04 20:26:56 | INFO | pipeline | MoneyPrinterTurbo: OK
+2026-06-04 20:26:56 | INFO | pipeline | Title: What Really Happens If You Fall Into a Black Hole?
+2026-06-04 20:26:56 | INFO | pipeline | Generating script, description and tags via Gemini...
+2026-06-04 20:26:56 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:26:56 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:26:56 | WARNING | idea_generator | Script generation attempt 1 failed: All Groq keys failed: None
+2026-06-04 20:27:01 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:27:01 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:27:01 | WARNING | idea_generator | Script generation attempt 2 failed: All Groq keys failed: None
+2026-06-04 20:27:06 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:27:06 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:27:06 | WARNING | idea_generator | Script generation attempt 3 failed: All Groq keys failed: None
+2026-06-04 20:27:06 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:27:06 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:27:06 | WARNING | idea_generator | Description generation attempt 1 failed: All Groq keys failed: None
+2026-06-04 20:27:11 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:27:11 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:27:11 | WARNING | idea_generator | Description generation attempt 2 failed: All Groq keys failed: None
+2026-06-04 20:27:16 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:27:16 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:27:16 | WARNING | idea_generator | Description generation attempt 3 failed: All Groq keys failed: None
+2026-06-04 20:27:16 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:27:16 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:27:16 | WARNING | idea_generator | Tag generation attempt 1 failed: All Groq keys failed: None
+2026-06-04 20:27:21 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:27:21 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:27:21 | WARNING | idea_generator | Tag generation attempt 2 failed: All Groq keys failed: None
+2026-06-04 20:27:26 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:27:26 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:27:26 | WARNING | idea_generator | Tag generation attempt 3 failed: All Groq keys failed: None
+2026-06-04 20:27:26 | INFO | pipeline | Script: 84 words | Tags: 10
+2026-06-04 20:27:26 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:27:26 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:27:26 | WARNING | idea_generator | Video terms generation attempt 1 failed: All Groq keys failed: None
+2026-06-04 20:27:31 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:27:31 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:27:31 | WARNING | idea_generator | Video terms generation attempt 2 failed: All Groq keys failed: None
+2026-06-04 20:27:36 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:27:36 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:27:36 | WARNING | idea_generator | Video terms generation attempt 3 failed: All Groq keys failed: None
+2026-06-04 20:27:36 | INFO | pipeline | Video terms: space, universe, galaxy, stars, planet
+2026-06-04 20:27:36 | INFO | pipeline | Sending to MoneyPrinterTurbo (may take 5-10 minutes)...
+2026-06-04 20:27:36 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:27:36 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /openapi.json HTTP/1.1" 200 22334
+2026-06-04 20:27:36 | INFO | video_creator | Discovered create endpoint from spec: /api/v1/videos
+2026-06-04 20:27:36 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:27:36 | DEBUG | urllib3.connectionpool | http://localhost:8080 "OPTIONS /api/v1/videos HTTP/1.1" 405 31
+2026-06-04 20:27:36 | INFO | video_creator | Using create endpoint: /api/v1/videos
+2026-06-04 20:27:36 | INFO | video_creator | Creating video (attempt 1): What Really Happens If You Fall Into a Black Hole?
+2026-06-04 20:27:36 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:27:36 | DEBUG | urllib3.connectionpool | http://localhost:8080 "POST /api/v1/videos HTTP/1.1" 400 295
+2026-06-04 20:27:36 | WARNING | video_creator | Response status: 400 | Body: {"status":400,"data":[{"type":"enum","loc":["body","video_transition_mode"],"msg":"Input should be 'None', 'Shuffle', 'FadeIn', 'FadeOut', 'SlideIn' or 'SlideOut'","input":"random","ctx":{"expected":"'None', 'Shuffle', 'FadeIn', 'FadeOut', 'SlideIn' or 'SlideOut'"}}],"message":"field required"}
+2026-06-04 20:27:36 | WARNING | video_creator | Create attempt 1 failed: 400 Client Error: Bad Request for url: http://localhost:8080/api/v1/videos
+2026-06-04 20:28:26 | INFO | pipeline | ==================================================
+2026-06-04 20:28:26 | INFO | pipeline | SPACE AUTOPILOT PIPELINE STARTED
+2026-06-04 20:28:26 | INFO | pipeline | ==================================================
+2026-06-04 20:28:26 | INFO | pipeline | Checking MoneyPrinterTurbo at http://localhost:8080...
+2026-06-04 20:28:26 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:28:26 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/health HTTP/1.1" 404 22
+2026-06-04 20:28:26 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:28:26 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /docs HTTP/1.1" 200 1016
+2026-06-04 20:28:26 | INFO | video_creator | MoneyPrinterTurbo reachable at http://localhost:8080/docs
+2026-06-04 20:28:26 | INFO | pipeline | MoneyPrinterTurbo: OK
+2026-06-04 20:28:26 | INFO | pipeline | Title: NASA Discovered an Exoplanet That Shouldn't Exist
+2026-06-04 20:28:26 | INFO | pipeline | Generating script, description and tags via Gemini...
+2026-06-04 20:28:26 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:28:26 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:28:26 | WARNING | idea_generator | Script generation attempt 1 failed: All Groq keys failed: None
+2026-06-04 20:28:31 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:28:31 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:28:31 | WARNING | idea_generator | Script generation attempt 2 failed: All Groq keys failed: None
+2026-06-04 20:28:36 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:28:36 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:28:36 | WARNING | idea_generator | Script generation attempt 3 failed: All Groq keys failed: None
+2026-06-04 20:28:36 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:28:36 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:28:36 | WARNING | idea_generator | Description generation attempt 1 failed: All Groq keys failed: None
+2026-06-04 20:28:41 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:28:41 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:28:41 | WARNING | idea_generator | Description generation attempt 2 failed: All Groq keys failed: None
+2026-06-04 20:28:46 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:28:46 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:28:46 | WARNING | idea_generator | Description generation attempt 3 failed: All Groq keys failed: None
+2026-06-04 20:28:46 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:28:46 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:28:46 | WARNING | idea_generator | Tag generation attempt 1 failed: All Groq keys failed: None
+2026-06-04 20:28:51 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:28:51 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:28:51 | WARNING | idea_generator | Tag generation attempt 2 failed: All Groq keys failed: None
+2026-06-04 20:28:56 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:28:56 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:28:56 | WARNING | idea_generator | Tag generation attempt 3 failed: All Groq keys failed: None
+2026-06-04 20:28:56 | INFO | pipeline | Script: 84 words | Tags: 10
+2026-06-04 20:28:56 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:28:56 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:28:56 | WARNING | idea_generator | Video terms generation attempt 1 failed: All Groq keys failed: None
+2026-06-04 20:29:01 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:29:01 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:29:01 | WARNING | idea_generator | Video terms generation attempt 2 failed: All Groq keys failed: None
+2026-06-04 20:29:06 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:29:06 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:29:06 | WARNING | idea_generator | Video terms generation attempt 3 failed: All Groq keys failed: None
+2026-06-04 20:29:06 | INFO | pipeline | Video terms: space, universe, galaxy, stars, planet
+2026-06-04 20:29:06 | INFO | pipeline | Sending to MoneyPrinterTurbo (may take 5-10 minutes)...
+2026-06-04 20:29:06 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:29:06 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /openapi.json HTTP/1.1" 200 22334
+2026-06-04 20:29:06 | INFO | video_creator | Discovered create endpoint from spec: /api/v1/videos
+2026-06-04 20:29:06 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:29:06 | DEBUG | urllib3.connectionpool | http://localhost:8080 "OPTIONS /api/v1/videos HTTP/1.1" 405 31
+2026-06-04 20:29:06 | INFO | video_creator | Using create endpoint: /api/v1/videos
+2026-06-04 20:29:06 | INFO | video_creator | Creating video (attempt 1): NASA Discovered an Exoplanet That Shouldn't Exist
+2026-06-04 20:29:06 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:29:06 | DEBUG | urllib3.connectionpool | http://localhost:8080 "POST /api/v1/videos HTTP/1.1" 200 92
+2026-06-04 20:29:06 | INFO | video_creator | Task created: dc748e7b-3506-41e0-8c02-c6055ea94b23
+2026-06-04 20:29:21 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:29:21 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23 HTTP/1.1" 200 116
+2026-06-04 20:29:21 | INFO | video_creator | Task dc748e7b-3506-41e0-8c02-c6055ea94b23 state=4 progress=40% (15s elapsed)
+2026-06-04 20:29:36 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:29:36 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23 HTTP/1.1" 200 116
+2026-06-04 20:29:36 | INFO | video_creator | Task dc748e7b-3506-41e0-8c02-c6055ea94b23 state=4 progress=40% (30s elapsed)
+2026-06-04 20:29:51 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:29:51 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23 HTTP/1.1" 200 116
+2026-06-04 20:29:51 | INFO | video_creator | Task dc748e7b-3506-41e0-8c02-c6055ea94b23 state=4 progress=40% (45s elapsed)
+2026-06-04 20:30:06 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:30:06 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23 HTTP/1.1" 200 116
+2026-06-04 20:30:06 | INFO | video_creator | Task dc748e7b-3506-41e0-8c02-c6055ea94b23 state=4 progress=50% (60s elapsed)
+2026-06-04 20:30:21 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:30:21 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23 HTTP/1.1" 200 116
+2026-06-04 20:30:21 | INFO | video_creator | Task dc748e7b-3506-41e0-8c02-c6055ea94b23 state=4 progress=50% (75s elapsed)
+2026-06-04 20:30:36 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:30:36 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23 HTTP/1.1" 200 116
+2026-06-04 20:30:36 | INFO | video_creator | Task dc748e7b-3506-41e0-8c02-c6055ea94b23 state=4 progress=50% (90s elapsed)
+2026-06-04 20:30:51 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:30:51 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23 HTTP/1.1" 200 116
+2026-06-04 20:30:51 | INFO | video_creator | Task dc748e7b-3506-41e0-8c02-c6055ea94b23 state=4 progress=50% (105s elapsed)
+2026-06-04 20:31:06 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:31:06 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23 HTTP/1.1" 200 116
+2026-06-04 20:31:06 | INFO | video_creator | Task dc748e7b-3506-41e0-8c02-c6055ea94b23 state=4 progress=50% (120s elapsed)
+2026-06-04 20:31:21 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:31:21 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23 HTTP/1.1" 200 116
+2026-06-04 20:31:21 | INFO | video_creator | Task dc748e7b-3506-41e0-8c02-c6055ea94b23 state=4 progress=50% (135s elapsed)
+2026-06-04 20:31:36 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:31:36 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23 HTTP/1.1" 200 116
+2026-06-04 20:31:36 | INFO | video_creator | Task dc748e7b-3506-41e0-8c02-c6055ea94b23 state=4 progress=75% (150s elapsed)
+2026-06-04 20:31:51 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:31:51 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23 HTTP/1.1" 200 116
+2026-06-04 20:31:51 | INFO | video_creator | Task dc748e7b-3506-41e0-8c02-c6055ea94b23 state=4 progress=75% (165s elapsed)
+2026-06-04 20:32:06 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:32:06 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23 HTTP/1.1" 200 116
+2026-06-04 20:32:06 | INFO | video_creator | Task dc748e7b-3506-41e0-8c02-c6055ea94b23 state=4 progress=75% (180s elapsed)
+2026-06-04 20:32:21 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:32:21 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23 HTTP/1.1" 200 2712
+2026-06-04 20:32:21 | INFO | video_creator | Task dc748e7b-3506-41e0-8c02-c6055ea94b23 state=1 progress=100% (195s elapsed)
+2026-06-04 20:32:21 | INFO | video_creator | Copied video from API response path: /Users/tejastelkar/Desktop/MoneyPrinterTurbo/storage/tasks/dc748e7b-3506-41e0-8c02-c6055ea94b23/final-1.mp4
+2026-06-04 20:32:21 | INFO | pipeline | Video ready: /Users/tejastelkar/Desktop/cosmosdaily/space_autopilot/outputs/dc748e7b-3506-41e0-8c02-c6055ea94b23.mp4
+2026-06-04 20:32:21 | INFO | pipeline | Generating thumbnail...
+2026-06-04 20:32:21 | INFO | thumbnail | Thumbnail saved: /Users/tejastelkar/Desktop/cosmosdaily/space_autopilot/thumbnails/NASA Discovered an Exoplanet That Shouldnt Exist.jpg
+2026-06-04 20:32:21 | INFO | pipeline | DRY RUN — skipping YouTube upload
+2026-06-04 20:32:21 | INFO | pipeline | Title:     NASA Discovered an Exoplanet That Shouldn't Exist
+2026-06-04 20:32:21 | INFO | pipeline | Video:     /Users/tejastelkar/Desktop/cosmosdaily/space_autopilot/outputs/dc748e7b-3506-41e0-8c02-c6055ea94b23.mp4
+2026-06-04 20:32:21 | INFO | pipeline | Thumbnail: /Users/tejastelkar/Desktop/cosmosdaily/space_autopilot/thumbnails/NASA Discovered an Exoplanet That Shouldnt Exist.jpg
+2026-06-04 20:32:21 | INFO | pipeline | Tags:      ['space', 'universe', 'facts', 'astronomy', 'cosmos', 'NASA', 'planets', 'stars', 'science', 'space facts']
+2026-06-04 20:40:45 | INFO | pipeline | ==================================================
+2026-06-04 20:40:45 | INFO | pipeline | SPACE AUTOPILOT PIPELINE STARTED
+2026-06-04 20:40:45 | INFO | pipeline | ==================================================
+2026-06-04 20:40:45 | INFO | pipeline | Checking MoneyPrinterTurbo at http://localhost:8080...
+2026-06-04 20:40:45 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:40:45 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/health HTTP/1.1" 404 22
+2026-06-04 20:40:45 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:40:45 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /docs HTTP/1.1" 200 1016
+2026-06-04 20:40:45 | INFO | video_creator | MoneyPrinterTurbo reachable at http://localhost:8080/docs
+2026-06-04 20:40:45 | INFO | pipeline | MoneyPrinterTurbo: OK
+2026-06-04 20:40:45 | INFO | pipeline | Title: 5 Unsolved Mysteries of the Universe That Stump Scientists
+2026-06-04 20:40:45 | INFO | pipeline | Generating script, description and tags via Gemini...
+2026-06-04 20:40:45 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:40:45 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:40:45 | WARNING | idea_generator | Script generation attempt 1 failed: All Groq keys failed: None
+2026-06-04 20:40:50 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:40:50 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:40:50 | WARNING | idea_generator | Script generation attempt 2 failed: All Groq keys failed: None
+2026-06-04 20:40:55 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:40:55 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:40:55 | WARNING | idea_generator | Script generation attempt 3 failed: All Groq keys failed: None
+2026-06-04 20:40:55 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:40:55 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:40:55 | WARNING | idea_generator | Description generation attempt 1 failed: All Groq keys failed: None
+2026-06-04 20:41:00 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:41:00 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:41:00 | WARNING | idea_generator | Description generation attempt 2 failed: All Groq keys failed: None
+2026-06-04 20:41:05 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:41:05 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:41:05 | WARNING | idea_generator | Description generation attempt 3 failed: All Groq keys failed: None
+2026-06-04 20:41:05 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:41:05 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:41:05 | WARNING | idea_generator | Tag generation attempt 1 failed: All Groq keys failed: None
+2026-06-04 20:41:10 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:41:10 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:41:10 | WARNING | idea_generator | Tag generation attempt 2 failed: All Groq keys failed: None
+2026-06-04 20:41:15 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:41:15 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:41:15 | WARNING | idea_generator | Tag generation attempt 3 failed: All Groq keys failed: None
+2026-06-04 20:41:15 | INFO | pipeline | Script: 84 words | Tags: 10
+2026-06-04 20:41:15 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:41:15 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:41:15 | WARNING | idea_generator | Video terms generation attempt 1 failed: All Groq keys failed: None
+2026-06-04 20:41:20 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:41:20 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:41:20 | WARNING | idea_generator | Video terms generation attempt 2 failed: All Groq keys failed: None
+2026-06-04 20:41:25 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 20:41:25 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 20:41:25 | WARNING | idea_generator | Video terms generation attempt 3 failed: All Groq keys failed: None
+2026-06-04 20:41:25 | INFO | pipeline | Video terms: space, universe, galaxy, stars, planet
+2026-06-04 20:41:25 | INFO | pipeline | Sending to MoneyPrinterTurbo (may take 5-10 minutes)...
+2026-06-04 20:41:25 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:41:25 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /openapi.json HTTP/1.1" 200 22334
+2026-06-04 20:41:25 | INFO | video_creator | Discovered create endpoint from spec: /api/v1/videos
+2026-06-04 20:41:25 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:41:25 | DEBUG | urllib3.connectionpool | http://localhost:8080 "OPTIONS /api/v1/videos HTTP/1.1" 405 31
+2026-06-04 20:41:25 | INFO | video_creator | Using create endpoint: /api/v1/videos
+2026-06-04 20:41:25 | INFO | video_creator | Creating video (attempt 1): 5 Unsolved Mysteries of the Universe That Stump Scientists
+2026-06-04 20:41:25 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:41:25 | DEBUG | urllib3.connectionpool | http://localhost:8080 "POST /api/v1/videos HTTP/1.1" 200 92
+2026-06-04 20:41:25 | INFO | video_creator | Task created: c567eaca-bfa9-40d9-aa45-d0082ee69b53
+2026-06-04 20:41:40 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:41:40 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:41:40 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=40% (15s elapsed)
+2026-06-04 20:41:55 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:41:55 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:41:55 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=40% (30s elapsed)
+2026-06-04 20:42:10 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:42:10 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:42:10 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=40% (45s elapsed)
+2026-06-04 20:42:25 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:42:25 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:42:25 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=50% (60s elapsed)
+2026-06-04 20:42:40 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:42:40 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:42:40 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=50% (75s elapsed)
+2026-06-04 20:42:55 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:42:55 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:42:55 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=50% (90s elapsed)
+2026-06-04 20:43:10 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:43:10 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:43:10 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=50% (105s elapsed)
+2026-06-04 20:43:25 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:43:25 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:43:25 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=50% (120s elapsed)
+2026-06-04 20:43:40 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:43:40 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:43:40 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=50% (135s elapsed)
+2026-06-04 20:43:55 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:43:55 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:43:55 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=50% (150s elapsed)
+2026-06-04 20:44:10 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:44:10 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:44:10 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=50% (165s elapsed)
+2026-06-04 20:44:25 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:44:25 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:44:25 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=75% (180s elapsed)
+2026-06-04 20:44:40 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:44:40 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:44:40 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=75% (195s elapsed)
+2026-06-04 20:44:55 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:44:55 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 116
+2026-06-04 20:44:55 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=4 progress=75% (210s elapsed)
+2026-06-04 20:45:10 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 20:45:10 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53 HTTP/1.1" 200 2712
+2026-06-04 20:45:10 | INFO | video_creator | Task c567eaca-bfa9-40d9-aa45-d0082ee69b53 state=1 progress=100% (225s elapsed)
+2026-06-04 20:45:10 | INFO | video_creator | Copied video from API response path: /Users/tejastelkar/Desktop/MoneyPrinterTurbo/storage/tasks/c567eaca-bfa9-40d9-aa45-d0082ee69b53/final-1.mp4
+2026-06-04 20:45:10 | INFO | pipeline | Video ready: /Users/tejastelkar/Desktop/cosmosdaily/space_autopilot/outputs/c567eaca-bfa9-40d9-aa45-d0082ee69b53.mp4
+2026-06-04 20:45:10 | INFO | pipeline | Generating thumbnail...
+2026-06-04 20:45:10 | INFO | thumbnail | Thumbnail saved: /Users/tejastelkar/Desktop/cosmosdaily/space_autopilot/thumbnails/5 Unsolved Mysteries of the Universe That Stump Sc.jpg
+2026-06-04 20:45:10 | INFO | pipeline | DRY RUN — skipping YouTube upload
+2026-06-04 20:45:10 | INFO | pipeline | Title:     5 Unsolved Mysteries of the Universe That Stump Scientists
+2026-06-04 20:45:10 | INFO | pipeline | Video:     /Users/tejastelkar/Desktop/cosmosdaily/space_autopilot/outputs/c567eaca-bfa9-40d9-aa45-d0082ee69b53.mp4
+2026-06-04 20:45:10 | INFO | pipeline | Thumbnail: /Users/tejastelkar/Desktop/cosmosdaily/space_autopilot/thumbnails/5 Unsolved Mysteries of the Universe That Stump Sc.jpg
+2026-06-04 20:45:10 | INFO | pipeline | Tags:      ['space', 'universe', 'facts', 'astronomy', 'cosmos', 'NASA', 'planets', 'stars', 'science', 'space facts']
