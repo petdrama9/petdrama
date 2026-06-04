@@ -89,10 +89,44 @@ def _parse_json_list(raw: str) -> list:
     return json.loads(cleaned)
 
 
+def get_trending_pet_topics() -> list:
+    """Fetch top posts from pet subreddits to use as inspiration."""
+    topics = []
+    subreddits = ["aww", "pets", "todayilearned"]
+    headers = {"User-Agent": "PetdramaBot/1.0"}
+    
+    for sub in subreddits:
+        try:
+            resp = requests.get(f"https://www.reddit.com/r/{sub}/top.json?limit=5&t=day", headers=headers, timeout=10)
+            if resp.status_code == 200:
+                data = resp.json()
+                for child in data.get("data", {}).get("children", []):
+                    title = child.get("data", {}).get("title")
+                    if title:
+                        topics.append(title)
+        except Exception as e:
+            log.warning(f"Failed to fetch Reddit trends for r/{sub}: {e}")
+            
+    filtered_topics = []
+    for t in topics:
+        if "dog" in t.lower() or "cat" in t.lower() or "animal" in t.lower() or "pet" in t.lower() or "wildlife" in t.lower():
+            filtered_topics.append(t)
+        elif "TIL" not in t:
+            filtered_topics.append(t)
+            
+    return filtered_topics[:15]
+
+
 def generate_ideas(count: int = 10) -> list:
+    trending_topics = get_trending_pet_topics()
+    trending_text = ""
+    if trending_topics:
+        trending_text = "\nHere are some currently trending topics online for inspiration:\n- " + "\n- ".join(trending_topics) + "\n"
+
     prompt = (
         f"You are a YouTube content strategist for a faceless channel about {NICHE}. "
         f"Generate {count} unique, engaging YouTube video titles.\n"
+        f"{trending_text}"
         "Rules:\n"
         "- Each title must be curiosity-driven and clickbaity but NOT misleading\n"
         "- Titles should be 40-70 characters long\n"
@@ -228,3 +262,31 @@ def generate_video_terms(script: str) -> str:
                 time.sleep(5)
 
     return "pets, cats, dogs, animals, cute"
+
+
+AVAILABLE_VOICES = {
+    "en-US-ChristopherNeural": "Energetic, enthusiastic, good for fun or surprising facts",
+    "en-US-GuyNeural": "Deep, serious, slightly dramatic, good for mysterious or dark facts",
+    "en-US-AriaNeural": "Friendly, upbeat female voice, good for cute or wholesome pet facts",
+    "en-US-EricNeural": "Upbeat, casual male voice, good for relatable pet habits",
+}
+
+def select_voice(title: str) -> str:
+    voices_str = "\n".join([f"- {name}: {desc}" for name, desc in AVAILABLE_VOICES.items()])
+    prompt = (
+        f"Select the best text-to-speech voice for a YouTube video titled: '{title}'\n"
+        f"Available voices:\n{voices_str}\n\n"
+        "Return ONLY the exact voice name as a string (e.g., en-US-ChristopherNeural). No explanation."
+    )
+    
+    for attempt in range(1, 3):
+        try:
+            voice = call_llm(prompt).strip()
+            voice = voice.replace('"', '').replace("'", '').strip()
+            if voice in AVAILABLE_VOICES:
+                log.info(f"Selected dynamic voice: {voice} for title: {title}")
+                return voice
+        except Exception as e:
+            log.warning(f"Voice selection attempt {attempt} failed: {e}")
+            
+    return "en-US-ChristopherNeural"

@@ -50,7 +50,7 @@ setup_logging()
 log = logging.getLogger("pipeline")
 
 # Deferred imports so logging is set up first
-from modules.idea_generator import generate_ideas, generate_description, generate_tags, generate_script, generate_video_terms
+from modules.idea_generator import generate_ideas, generate_description, generate_tags, generate_script, generate_video_terms, select_voice
 from modules.video_creator import check_moneyprinter_running, create_video
 from modules.thumbnail import generate_thumbnail
 from modules.uploader import authenticate_youtube, upload_video, QuotaExceededError
@@ -117,9 +117,13 @@ def run_pipeline(custom_title: str | None = None, dry_run: bool = False) -> bool
         video_terms = generate_video_terms(script)
         log.info(f"Video terms: {video_terms}")
 
+        # Select voice
+        log.info("Selecting dynamic voice based on title...")
+        voice = select_voice(title)
+
         # Step 4: Video creation (script passed in — MPT skips its own LLM call)
         log.info("Sending to MoneyPrinterTurbo (may take 5-10 minutes)...")
-        video_path = create_video(title, script=script, video_terms=video_terms)
+        video_path = create_video(title, script=script, video_terms=video_terms, voice_name=voice)
         log.info(f"Video ready: {video_path}")
 
         # Step 5: Thumbnail

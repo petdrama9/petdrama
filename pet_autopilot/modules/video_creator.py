@@ -165,7 +165,7 @@ def poll_task_status(task_id: str) -> dict:
     return {}
 
 
-def create_video(title: str, script: str = "", video_terms: str = None) -> str:
+def create_video(title: str, script: str = "", video_terms: str = None, voice_name: str = None) -> str:
     create_endpoint = _find_create_endpoint()
     log.info(f"Using create endpoint: {create_endpoint}")
 
@@ -173,10 +173,10 @@ def create_video(title: str, script: str = "", video_terms: str = None) -> str:
         "video_subject": title,
         "video_script": script,
         "video_language": VIDEO_LANGUAGE,
-        "voice_name": VOICE_NAME,
+        "voice_name": voice_name if voice_name else VOICE_NAME,
         "video_concat_mode": "random",
         "video_clip_duration": 3,
-        "video_transition_mode": "",
+        "video_transition_mode": "None",
         "video_aspect": "9:16",
         "bgm_type": BGM_TYPE,
         "bgm_volume": BGM_VOLUME,
