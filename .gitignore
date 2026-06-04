@@ -2,18 +2,18 @@
 .env
 *.env
 client_secret_*.json
-space_autopilot/credentials/
+pet_autopilot/credentials/
 
 # Caches
 __pycache__/
 *.pyc
 
 # Logs
-space_autopilot/logs/
+pet_autopilot/logs/
 
 # Outputs & Thumbnails
-space_autopilot/outputs/
-space_autopilot/thumbnails/
+pet_autopilot/outputs/
+pet_autopilot/thumbnails/
 
 # OS files
 .DS_Store

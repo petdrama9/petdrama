@@ -293,3 +293,115 @@
 2026-06-04 20:45:10 | INFO | pipeline | Video:     /Users/tejastelkar/Desktop/cosmosdaily/space_autopilot/outputs/c567eaca-bfa9-40d9-aa45-d0082ee69b53.mp4
 2026-06-04 20:45:10 | INFO | pipeline | Thumbnail: /Users/tejastelkar/Desktop/cosmosdaily/space_autopilot/thumbnails/5 Unsolved Mysteries of the Universe That Stump Sc.jpg
 2026-06-04 20:45:10 | INFO | pipeline | Tags:      ['space', 'universe', 'facts', 'astronomy', 'cosmos', 'NASA', 'planets', 'stars', 'science', 'space facts']
+2026-06-04 22:24:26 | INFO | pipeline | ==================================================
+2026-06-04 22:24:26 | INFO | pipeline | SPACE AUTOPILOT PIPELINE STARTED
+2026-06-04 22:24:26 | INFO | pipeline | ==================================================
+2026-06-04 22:24:26 | INFO | pipeline | Checking MoneyPrinterTurbo at http://localhost:8080...
+2026-06-04 22:24:26 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:24:26 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/health HTTP/1.1" 404 22
+2026-06-04 22:24:26 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:24:26 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /docs HTTP/1.1" 200 1016
+2026-06-04 22:24:26 | INFO | video_creator | MoneyPrinterTurbo reachable at http://localhost:8080/docs
+2026-06-04 22:24:26 | INFO | pipeline | MoneyPrinterTurbo: OK
+2026-06-04 22:24:26 | INFO | pipeline | Title: Our Galaxy's Collision: The Truth About Andromeda
+2026-06-04 22:24:26 | INFO | pipeline | Generating script, description and tags via Gemini...
+2026-06-04 22:24:26 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 22:24:26 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 22:24:26 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): api.groq.com:443
+2026-06-04 22:24:27 | DEBUG | urllib3.connectionpool | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2026-06-04 22:24:27 | INFO | idea_generator | Generated script (122 words) for: Our Galaxy's Collision: The Truth About Andromeda
+2026-06-04 22:24:27 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 22:24:27 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 22:24:27 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): api.groq.com:443
+2026-06-04 22:24:28 | DEBUG | urllib3.connectionpool | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2026-06-04 22:24:28 | INFO | idea_generator | Generated description for: Our Galaxy's Collision: The Truth About Andromeda
+2026-06-04 22:24:28 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 22:24:28 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 22:24:28 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): api.groq.com:443
+2026-06-04 22:24:29 | DEBUG | urllib3.connectionpool | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2026-06-04 22:24:29 | INFO | idea_generator | Generated 15 tags
+2026-06-04 22:24:29 | INFO | pipeline | Script: 122 words | Tags: 15
+2026-06-04 22:24:29 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 22:24:29 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 22:24:29 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): api.groq.com:443
+2026-06-04 22:24:30 | DEBUG | urllib3.connectionpool | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2026-06-04 22:24:30 | INFO | idea_generator | Generated video terms: galaxy collision, spiral galaxy, ring galaxy, supernovae explosion, black hole
+2026-06-04 22:24:30 | INFO | pipeline | Video terms: galaxy collision, spiral galaxy, ring galaxy, supernovae explosion, black hole
+2026-06-04 22:24:30 | INFO | pipeline | Sending to MoneyPrinterTurbo (may take 5-10 minutes)...
+2026-06-04 22:24:30 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:24:30 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /openapi.json HTTP/1.1" 200 22334
+2026-06-04 22:24:30 | INFO | video_creator | Discovered create endpoint from spec: /api/v1/videos
+2026-06-04 22:24:30 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:24:30 | DEBUG | urllib3.connectionpool | http://localhost:8080 "OPTIONS /api/v1/videos HTTP/1.1" 405 31
+2026-06-04 22:24:30 | INFO | video_creator | Using create endpoint: /api/v1/videos
+2026-06-04 22:24:30 | INFO | video_creator | Creating video (attempt 1): Our Galaxy's Collision: The Truth About Andromeda
+2026-06-04 22:24:30 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:24:30 | DEBUG | urllib3.connectionpool | http://localhost:8080 "POST /api/v1/videos HTTP/1.1" 200 92
+2026-06-04 22:24:30 | INFO | video_creator | Task created: 8dbaa638-6449-4f6c-8169-d55fc6464a67
+2026-06-04 22:24:45 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:24:45 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/8dbaa638-6449-4f6c-8169-d55fc6464a67 HTTP/1.1" 200 116
+2026-06-04 22:24:45 | INFO | video_creator | Task 8dbaa638-6449-4f6c-8169-d55fc6464a67 state=4 progress=40% (15s elapsed)
+2026-06-04 22:25:00 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:25:00 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/8dbaa638-6449-4f6c-8169-d55fc6464a67 HTTP/1.1" 200 116
+2026-06-04 22:25:00 | INFO | video_creator | Task 8dbaa638-6449-4f6c-8169-d55fc6464a67 state=4 progress=40% (30s elapsed)
+2026-06-04 22:25:15 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:25:15 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/8dbaa638-6449-4f6c-8169-d55fc6464a67 HTTP/1.1" 200 116
+2026-06-04 22:25:15 | INFO | video_creator | Task 8dbaa638-6449-4f6c-8169-d55fc6464a67 state=4 progress=40% (45s elapsed)
+2026-06-04 22:25:30 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:25:30 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/8dbaa638-6449-4f6c-8169-d55fc6464a67 HTTP/1.1" 200 116
+2026-06-04 22:25:30 | INFO | video_creator | Task 8dbaa638-6449-4f6c-8169-d55fc6464a67 state=4 progress=40% (60s elapsed)
+2026-06-04 22:25:55 | INFO | pipeline | ==================================================
+2026-06-04 22:25:55 | INFO | pipeline | SPACE AUTOPILOT PIPELINE STARTED
+2026-06-04 22:25:55 | INFO | pipeline | ==================================================
+2026-06-04 22:25:55 | INFO | pipeline | Checking MoneyPrinterTurbo at http://localhost:8080...
+2026-06-04 22:25:55 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:25:55 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/health HTTP/1.1" 404 22
+2026-06-04 22:25:55 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:25:55 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /docs HTTP/1.1" 200 1016
+2026-06-04 22:25:55 | INFO | video_creator | MoneyPrinterTurbo reachable at http://localhost:8080/docs
+2026-06-04 22:25:55 | INFO | pipeline | MoneyPrinterTurbo: OK
+2026-06-04 22:25:55 | INFO | pipeline | Queue low — generating 10 new ideas via Gemini...
+2026-06-04 22:25:55 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 22:25:55 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 22:25:55 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): api.groq.com:443
+2026-06-04 22:25:56 | DEBUG | urllib3.connectionpool | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2026-06-04 22:25:56 | INFO | idea_generator | Generated 10 ideas via LLM
+2026-06-04 22:25:56 | INFO | tracker | Added 10 ideas to queue (total: 10)
+2026-06-04 22:25:56 | INFO | pipeline | Title: 5 Secrets Cats Keep
+2026-06-04 22:25:56 | INFO | pipeline | Generating script, description and tags via Gemini...
+2026-06-04 22:25:56 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 22:25:56 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 22:25:56 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): api.groq.com:443
+2026-06-04 22:25:57 | DEBUG | urllib3.connectionpool | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2026-06-04 22:25:57 | INFO | idea_generator | Generated script (130 words) for: 5 Secrets Cats Keep
+2026-06-04 22:25:57 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 22:25:57 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 22:25:57 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): api.groq.com:443
+2026-06-04 22:25:58 | DEBUG | urllib3.connectionpool | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2026-06-04 22:25:58 | INFO | idea_generator | Generated description for: 5 Secrets Cats Keep
+2026-06-04 22:25:58 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 22:25:58 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 22:25:58 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): api.groq.com:443
+2026-06-04 22:25:59 | DEBUG | urllib3.connectionpool | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2026-06-04 22:25:59 | INFO | idea_generator | Generated 15 tags
+2026-06-04 22:25:59 | INFO | pipeline | Script: 130 words | Tags: 15
+2026-06-04 22:25:59 | INFO | idea_generator | Attempting LLM call via Gemini...
+2026-06-04 22:25:59 | WARNING | idea_generator | Gemini API call failed: GEMINI_API_KEY is not set. Falling back to Groq...
+2026-06-04 22:25:59 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): api.groq.com:443
+2026-06-04 22:25:59 | DEBUG | urllib3.connectionpool | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2026-06-04 22:25:59 | INFO | idea_generator | Generated video terms: cat jumping high, cat sleeping on couch, cat rotating its ears, domestic cat playing indoors
+2026-06-04 22:25:59 | INFO | pipeline | Video terms: cat jumping high, cat sleeping on couch, cat rotating its ears, domestic cat playing indoors
+2026-06-04 22:25:59 | INFO | pipeline | Sending to MoneyPrinterTurbo (may take 5-10 minutes)...
+2026-06-04 22:25:59 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:25:59 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /openapi.json HTTP/1.1" 200 22334
+2026-06-04 22:25:59 | INFO | video_creator | Discovered create endpoint from spec: /api/v1/videos
+2026-06-04 22:25:59 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:25:59 | DEBUG | urllib3.connectionpool | http://localhost:8080 "OPTIONS /api/v1/videos HTTP/1.1" 405 31
+2026-06-04 22:25:59 | INFO | video_creator | Using create endpoint: /api/v1/videos
+2026-06-04 22:25:59 | INFO | video_creator | Creating video (attempt 1): 5 Secrets Cats Keep
+2026-06-04 22:25:59 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:25:59 | DEBUG | urllib3.connectionpool | http://localhost:8080 "POST /api/v1/videos HTTP/1.1" 200 92
+2026-06-04 22:25:59 | INFO | video_creator | Task created: 8355f15b-51ce-418d-925e-ab39df7963ef
+2026-06-04 22:26:14 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:8080
+2026-06-04 22:26:14 | DEBUG | urllib3.connectionpool | http://localhost:8080 "GET /api/v1/tasks/8355f15b-51ce-418d-925e-ab39df7963ef HTTP/1.1" 200 116
+2026-06-04 22:26:14 | INFO | video_creator | Task 8355f15b-51ce-418d-925e-ab39df7963ef state=4 progress=40% (15s elapsed)
