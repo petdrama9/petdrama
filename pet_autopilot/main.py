@@ -8,7 +8,7 @@ from pathlib import Path
 
 import colorlog
 
-from config import LOGS_DIR, MONEY_PRINTER_URL, THUMBNAILS_DIR
+from config import LOGS_DIR, MONEY_PRINTER_URL
 
 
 def setup_logging():
@@ -52,7 +52,7 @@ log = logging.getLogger("pipeline")
 # Deferred imports so logging is set up first
 from modules.idea_generator import generate_ideas, generate_description, generate_tags, generate_script, generate_video_terms, select_voice
 from modules.video_creator import check_moneyprinter_running, create_video
-from modules.thumbnail import generate_thumbnail
+
 from modules.uploader import authenticate_youtube, upload_video, QuotaExceededError
 from modules.tracker import (
     add_to_queue,
@@ -126,17 +126,12 @@ def run_pipeline(custom_title: str | None = None, dry_run: bool = False) -> bool
         video_path = create_video(title, script=script, video_terms=video_terms, voice_name=voice)
         log.info(f"Video ready: {video_path}")
 
-        # Step 5: Thumbnail
-        log.info("Generating thumbnail...")
-        safe_name = "".join(c for c in title if c.isalnum() or c in " -_")[:50].strip()
-        thumbnail_path = str(Path(THUMBNAILS_DIR) / f"{safe_name}.jpg")
-        generate_thumbnail(title, thumbnail_path)
 
         if dry_run:
             log.info("DRY RUN — skipping YouTube upload")
             log.info(f"Title:     {title}")
             log.info(f"Video:     {video_path}")
-            log.info(f"Thumbnail: {thumbnail_path}")
+
             log.info(f"Tags:      {tags}")
             return True
 
@@ -151,7 +146,6 @@ def run_pipeline(custom_title: str | None = None, dry_run: bool = False) -> bool
             title=title,
             description=description,
             tags=tags,
-            thumbnail_path=thumbnail_path,
         )
 
         video_url = f"https://youtube.com/watch?v={video_id}"

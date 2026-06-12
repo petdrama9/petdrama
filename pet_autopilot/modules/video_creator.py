@@ -174,6 +174,7 @@ def create_video(title: str, script: str = "", video_terms: str = None, voice_na
         "video_script": script,
         "video_language": VIDEO_LANGUAGE,
         "voice_name": voice_name if voice_name else VOICE_NAME,
+        "font_name": "AppleGaramond-Bold.ttf",
         "video_concat_mode": "random",
         "video_clip_duration": 3,
         "video_transition_mode": "None",
@@ -182,10 +183,12 @@ def create_video(title: str, script: str = "", video_terms: str = None, voice_na
         "bgm_volume": BGM_VOLUME,
         "subtitle_enabled": SUBTITLE_ENABLED,
         "subtitle_position": "custom",
-        "custom_position": 80.0,
+        "custom_position": 93.0,
         "text_fore_color": "#FFFF00",
-        "text_background_color": "#000000",
-        "font_size": 75,
+        "text_background_color": False,
+        "font_size": 65,
+        "stroke_color": "#000000",
+        "stroke_width": 12.0,
         "video_source": "pexels", # Pexels works better on GitHub Actions (Pixabay blocks server IPs)
         "pexels_api_key": PEXELS_API_KEY,
     }

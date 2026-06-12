@@ -3,6 +3,7 @@ import logging
 import time
 import requests
 from config import GEMINI_API_KEY, GEMINI_API_URL, GROQ_API_KEYS, GROQ_API_URL, GROQ_MODEL, NICHE
+from . import tracker
 
 log = logging.getLogger("idea_generator")
 
@@ -119,15 +120,20 @@ def get_trending_pet_topics() -> list:
 
 def generate_ideas(count: int = 10) -> list:
     trending_topics = get_trending_pet_topics()
+    history = tracker.load_uploaded().get("videos", [])
+    past_titles = [v["title"] for v in history[-30:]] # Max last 30 for context window
     trending_text = ""
     if trending_topics:
         trending_text = "\nHere are some currently trending topics online for inspiration:\n- " + "\n- ".join(trending_topics) + "\n"
+    if past_titles:
+        trending_text += "\nDO NOT generate ideas similar to these past videos:\n- " + "\n- ".join(past_titles) + "\n\n"
 
     prompt = (
         f"You are a YouTube content strategist for a faceless channel about {NICHE}. "
         f"Generate {count} unique, engaging YouTube video titles.\n"
         f"{trending_text}"
         "Rules:\n"
+        "- Each title must be wildly unique and different from anything done before.\n"
         "- Each title must be curiosity-driven and clickbaity but NOT misleading\n"
         "- Titles should be 40-70 characters long\n"
         "- Mix formats: lists ('5 Things...'), stories ('The Truth About...'), questions ('What Happens If...'), shocking facts ('Scientists Just Discovered...')\n"
@@ -183,18 +189,32 @@ def generate_description(title: str) -> str:
 
 
 def generate_script(title: str) -> str:
+    import random
+    styles = [
+        "A heartwarming and emotional story",
+        "A fast-paced, high-energy TikTok info-dump",
+        "A calm, mind-bending scientific documentary",
+        "A dramatic, cinematic story about a specific discovery",
+        "A funny, sarcastic, and slightly dramatic review"
+    ]
+    style = random.choice(styles)
+    
+    history = tracker.load_uploaded().get("videos", [])
+    past_titles = [v["title"] for v in history[-30:]]
+    history_text = ""
+    if past_titles:
+        history_text = f"\nCRITICAL RULE: DO NOT use ANY facts or structures that you might have used in these past videos: {', '.join(past_titles)}\n"
+
     prompt = (
-        f"Write a fact-packed narration script for a YouTube Shorts video titled: '{title}'\n"
+        f"Write a highly engaging, story-driven narration script for a YouTube Shorts video titled: '{title}'\n"
+        f"STYLE / TONE TO USE: {style}\n"
+        f"{history_text}"
         "Rules:\n"
         "- 120-150 words total\n"
-        "- Every sentence must contain a REAL, specific, mind-blowing fact with numbers or measurements if possible\n"
-        "- Include at least 5 distinct facts (lifespans, physical abilities, sensory limits, unique behaviors, scientific discoveries)\n"
-        "- Start with one shocking fact as a hook — no questions, no 'have you ever wondered'\n"
-        "- No filler sentences, no vague statements\n"
+        "- You MUST tell a cohesive story. Do NOT just rattle off random facts. The narrative must flow naturally.\n"
+        "- Change your intro hook completely! Do NOT use generic hooks like 'Did you know' or 'Here are three facts'.\n"
+        "- Change your ending completely! Do not use the same closing remarks.\n"
         "- Plain narration text only — no headers, no bullet points, no markdown\n"
-        "- End with the most surprising fact saved for last\n"
-        "Example of good fact: 'A dog's sense of smell is 40 times better than a human's, with over 300 million olfactory receptors.'\n"
-        "Example of bad: 'Dogs are incredibly fascinating and loyal animals.'\n"
         "Return ONLY the narration script. Nothing else."
     )
 

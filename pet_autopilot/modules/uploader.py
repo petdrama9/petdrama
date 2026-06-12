@@ -63,7 +63,6 @@ def upload_video(
     title: str,
     description: str,
     tags: list,
-    thumbnail_path: str,
 ) -> str:
     safe_title = title[:100]
 
@@ -111,16 +110,6 @@ def upload_video(
 
     video_id = response.get("id")
     log.info(f"Video uploaded successfully: {video_id}")
-
-    # Upload thumbnail
-    try:
-        youtube.thumbnails().set(
-            videoId=video_id,
-            media_body=MediaFileUpload(thumbnail_path),
-        ).execute()
-        log.info(f"Thumbnail uploaded for video {video_id}")
-    except googleapiclient.errors.HttpError as e:
-        log.warning(f"Thumbnail upload failed (video still uploaded): {e}")
 
     return video_id
 
