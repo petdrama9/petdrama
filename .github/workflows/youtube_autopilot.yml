@@ -48,6 +48,10 @@ jobs:
           cd ../MoneyPrinterTurbo
           pip install -r requirements.txt
 
+      - name: Install Custom Fonts
+        run: |
+          python -c 'import urllib.request; urllib.request.urlretrieve("https://raw.githubusercontent.com/shytikov/apple-garamond/master/AppleGaramond-Bold.ttf", "../MoneyPrinterTurbo/resource/fonts/AppleGaramond-Bold.ttf")'
+
       - name: Create credentials and environment config
         run: |
           mkdir -p pet_autopilot/credentials
