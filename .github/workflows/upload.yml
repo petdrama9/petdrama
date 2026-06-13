@@ -1,0 +1,157 @@
+name: PetDrama — Reel to YouTube Shorts
+
+on:
+  repository_dispatch:
+    types: [upload_reel]
+
+  workflow_dispatch:
+    inputs:
+      reel_url:
+        description: "Instagram Reel URL"
+        required: true
+        type: string
+
+# Only one upload at a time
+concurrency:
+  group: petdrama-youtube-upload
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    name: Download → Generate → Upload
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: write
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 1
+
+      # ── 2. Resolve reel URL ──────────────────────────────────────────────────
+      - name: Resolve reel URL
+        id: resolve
+        run: |
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            REEL_URL="${{ github.event.client_payload.reel_url }}"
+          else
+            REEL_URL="${{ github.event.inputs.reel_url }}"
+          fi
+
+          if [ -z "$REEL_URL" ]; then
+            echo "::error::reel_url is empty. Cannot proceed."
+            exit 1
+          fi
+
+          echo "reel_url=$REEL_URL" >> "$GITHUB_OUTPUT"
+          echo "✅ Reel URL: $REEL_URL"
+
+      # ── 3. System dependencies ───────────────────────────────────────────────
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+
+      # ── 4. Python ───────────────────────────────────────────────────────────
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # ── 5. Write credentials ─────────────────────────────────────────────────
+      - name: Set up YouTube token
+        env:
+          YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
+        run: |
+          if [ -n "$YOUTUBE_TOKEN" ]; then
+            echo "$YOUTUBE_TOKEN" > token.json
+            echo "✅ YouTube token.json written"
+          else
+            echo "::warning::YOUTUBE_TOKEN secret not set"
+          fi
+
+      - name: Set up Instagram cookies
+        env:
+          INSTAGRAM_COOKIES: ${{ secrets.INSTAGRAM_COOKIES }}
+        run: |
+          if [ -n "$INSTAGRAM_COOKIES" ]; then
+            echo "$INSTAGRAM_COOKIES" > cookies.txt
+            echo "✅ cookies.txt written"
+          else
+            echo "::warning::INSTAGRAM_COOKIES not set"
+          fi
+
+      # ── 6. Run pipeline ──────────────────────────────────────────────────────
+      - name: Run Reel → Shorts pipeline
+        id: pipeline
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          LOG_LEVEL: INFO
+        run: |
+          python app.py --url "${{ steps.resolve.outputs.reel_url }}"
+
+      # ── 7. Upload logs as artifact ───────────────────────────────────────────
+      - name: Upload run logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: run-logs-${{ github.run_id }}
+          path: logs/
+          retention-days: 30
+
+      # ── 8. Cleanup sensitive files ───────────────────────────────────────────
+      - name: Cleanup sensitive files
+        if: always()
+        run: |
+          rm -f token.json cookies.txt
+          echo "🧹 Cleaned up"
+
+      # ── 9. Commit logs + queue changes back to repo ──────────────────────────
+      - name: Commit logs to repository
+        if: always()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add logs/ pending_queue/ || true
+          if git diff --staged --quiet; then
+            echo "No new log files to commit."
+          else
+            git commit -m "ci: run log for ${{ github.run_id }} [skip ci]"
+            git pull --rebase origin main || true
+            git push
+          fi
+
+      # ── 10. Job summary ──────────────────────────────────────────────────────
+      - name: Write success summary
+        if: success()
+        run: |
+          echo "## ✅ PetDrama Reel → YouTube Shorts — Success" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Field | Value |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-------|-------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Reel URL | ${{ steps.resolve.outputs.reel_url }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| YouTube Short | ${{ steps.pipeline.outputs.shorts_url }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Title | ${{ steps.pipeline.outputs.title }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Run | [${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) |" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Write failure summary
+        if: failure()
+        run: |
+          echo "## ❌ PetDrama Reel → Shorts — Failed" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Check the **run-logs** artifact for details." >> "$GITHUB_STEP_SUMMARY"
+          echo "| Reel URL | ${{ steps.resolve.outputs.reel_url }} |" >> "$GITHUB_STEP_SUMMARY"

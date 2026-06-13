@@ -18,3 +18,10 @@ pet_autopilot/thumbnails/
 # OS files
 .DS_Store
 Thumbs.db
+
+# ── Reel-to-Shorts pipeline ──
+token.json
+cookies.txt
+downloads/
+logs/*.json
+# keep pending_queue/ tracked (it's the retry queue)
