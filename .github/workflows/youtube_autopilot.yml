@@ -2,7 +2,7 @@ name: Petdrama Autopilot Upload
 
 on:
   schedule:
-    - cron: '0 0,5,10,15,20 * * *'  # Runs 5 times a day (every 5 hours)
+    - cron: '30 3 * * *'  # Runs once a day at 03:30 UTC (9:00 AM IST)
   workflow_dispatch:  # Allows manually running the workflow from GitHub Actions tab
 
 jobs:
